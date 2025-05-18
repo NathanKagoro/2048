@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Links to bootstrap and local stylesheets-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="2048 stylesheet.css">
+    
+  <title>2048 Login</title>
+</head>
+
+<body class="container">
+	<br><br><br><br><br>
+  <!--2048 heading that doubles as a link to the first page-->
+	<div class="text-center"> <a href="2048 entry.html"><button id="heading">2048</button> </a></div>
+
+	<main class="form-signin w-25 m-auto">
+    <!--Login heading-->
+		<div class="text-center"><h1 class="h2 mb-3 fw-normal">Login</h1></div>
+	
+  <!--Sign in form created with bootstrap linking to difficulty page after submition-->
+	<form id="login_form">
+
+    <div class="form-floating">
+      <input type="text" class="form-control" name="username_input" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Username</label>
+    </div> 
+	<br>
+    <div class="form-floating">
+      <input type="password" class="form-control" name="password_input" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+	<br> 
+	
+  <div class="text-center"><button class="btn btn-primary col-6 py-6 center" type="submit" >Sign in</button>
+  </div>
+
+  </form>
+	
+	<div class="text-center"><p> Don't have an account? <a href="2048 signup.html"> Sign up here </a> </p></div>
+	</main>
+
+  <script>
+
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', (e) =>{
+      e.preventDefault();
+
+      let username_input = document.getElementById("login_form").username_input.value;
+      let password_input = document.getElementById("login_form").password_input.value;
+
+      let user_stored = JSON.parse(localStorage.getItem(username_input));
+
+      if(user_stored){
+        if(user_stored.password == password_input){
+          sessionStorage.loggedInUser = username_input;
+          window.location.href = "2048 difficulty.html";
+        }
+        else{
+          alert("Password is incorrect.");
+        }
+      }
+      else{
+        alert("Username does not exist in database.");
+      }
+
+    })
+
+  </script>
+
+</body>
+
+<br><br><br><br><br>
+
+<footer>
+  <!--Footer containing social media links-->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <p class="footer-text"> Website developed by Nathan Kagoro. Find me on: 
+      <a href="https://instagram.com/natethespookykangaroo?igshid=OGQ5ZDc2ODk2ZA=="><button class="instagram-btn"><ion-icon name="logo-instagram" size="small"></ion-icon> </button></a>&nbsp;
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button class="email-btn"><ion-icon name="logo-youtube" size="small"></ion-icon></button></a> &nbsp;
+      <a href="https://www.linkedin.com/in/nathan-kagoro-06ba31270/?originalSubdomain=mu"><button class="linkedin-btn"><ion-icon name="logo-linkedin" size="small"></ion-icon></button></a>
+  </p>
+</footer>
+
+</html>

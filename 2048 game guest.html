@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Links to bootstrap and local stylesheets-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="2048 game stylesheet.css">
+    <link rel="stylesheet" href="2048 stylesheet.css">
+
+    <title>2048</title>
+</head>
+
+<header>
+    <!--Link to ion icons framework-->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+    <div id="username_header_guest"><p id="username_text_guest"> Guest</p></div>
+
+    <!--Leaderboard button linking to leaderboard page-->
+    <a href="2048 leaderboard.html">
+    <button type="button" class="button" id="leaderboard">
+        <ion-icon name="contacts" item-right></ion-icon>
+        <p class="button-text"> Leaderboard </p>
+    </button>
+    </a>
+
+
+    &nbsp; &nbsp;
+
+    <!--Settings button that activates the side bar-->
+    <button type="button" class="button" id="settings" onclick="sidebar_check()">
+        <ion-icon name="cog" float-right></ion-icon>
+        <p class="button-text"> Settings </p>
+    </button>
+
+    <!--Collapsable Side bar code-->
+    <div class="sidebar closed">
+            <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="2048 login.html" class="nav-link text-black" aria-current="page">
+                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                Change accounts
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-black">
+                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                Game difficulty
+                </a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--Function to collapse and activate sidebar-->
+    <script>
+
+        let check = false;
+
+        function sidebar_check(){
+
+            if(!check){
+                check = true;
+            }
+            else{
+                check = false;
+            }
+            sidebar();
+        }
+
+        function sidebar(){
+            if (sidebar){
+                document.querySelector('.closed').classList.toggle('open');
+            }
+            else{
+                document.querySelector('.open').classList.toggle('closed');
+            }
+        }
+    </script>
+</header>
+
+<body class="container">
+    <!--2048 heading that doubles as a link to the first page-->
+	<div class="text-center"> <a href="2048 entry.html"><button id="heading">2048</button> </a></div>
+
+    <div id="scores">
+        <H2 class="score" id="score"> Score: </H2>
+    </div>
+
+    <!--Game board divided in sections containing all possible numbers to be generated-->
+    <div id="board">
+
+        <script src="2048 game logic.js" defer></script>
+
+        <!--
+        <div class="tile x2">2</div>
+        <div class="tile x4">4</div>
+        <div class="tile x8">8</div>
+        <div class="tile x16">16</div>
+        <div class="tile x32">32</div>
+        <div class="tile x64">64</div>
+        <div class="tile x128">128</div>
+        <div class="tile x256">256</div>
+        <div class="tile x512">512</div>
+        <div class="tile x1024">1024</div>
+        <div class="tile x2048">2048</div>
+        <div class="tile x4096">4096</div>
+        <div class="tile x8192">8192</div>
+        <div class="tile x8192">16384</div>
+        <div class="tile x8192">32768</div>
+        <div class="tile x8192">65535</div>
+        -->
+    </div>
+</body>
+
+<br><br>
+
+
+<footer>
+    <!--Footer containing social media links-->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <p class="footer-text"> Website developed by Nathan Kagoro. Find me on: 
+        <a href="https://instagram.com/natethespookykangaroo?igshid=OGQ5ZDc2ODk2ZA=="><button class="instagram-btn"><ion-icon name="logo-instagram" size="small"></ion-icon> </button></a>&nbsp;
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button class="email-btn"><ion-icon name="logo-youtube" size="small"></ion-icon></button></a> &nbsp;
+        <a href="https://www.linkedin.com/in/nathan-kagoro-06ba31270/?originalSubdomain=mu"><button class="linkedin-btn"><ion-icon name="logo-linkedin" size="small"></ion-icon></button></a>
+    </p>
+  </footer>
+
+</html>

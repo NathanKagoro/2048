@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Links to local stylesheets-->
+    <link rel="stylesheet" href="entry stylesheet.css">
+    <link rel="stylesheet" href="2048 stylesheet.css">
+    <title>2048</title>
+</head>
+
+<body class="container">
+    <h1>2048</h1>
+    <!--Buttons that link login page and difficulty selection page-->
+    <a href="2048 login.html"><button id="login_button">   Login </button></a> 
+    <a href="2048 difficulty.html"><button id="guest_button" onclick="guest()">Play as guest</button> </a> 
+
+    <script>
+        function guest(){
+            sessionStorage.loggedInUser = "Guest";
+            window.location.href = "2048 difficulty.html";
+        }
+    </script>
+</body>
+
+<br><br><br><br><br><br><br><br><br><br>
+
+<footer>
+    <!--Footer containing social media links-->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <p class="footer-text"> Website developed by Nathan Kagoro. Find me on: 
+        <a href="https://instagram.com/natethespookykangaroo?igshid=OGQ5ZDc2ODk2ZA=="><button class="instagram-btn"><ion-icon name="logo-instagram" size="small"></ion-icon> </button></a>&nbsp;
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button class="email-btn"><ion-icon name="logo-youtube" size="small"></ion-icon></button></a> &nbsp;
+        <a href="https://www.linkedin.com/in/nathan-kagoro-06ba31270/?originalSubdomain=mu"><button class="linkedin-btn"><ion-icon name="logo-linkedin" size="small"></ion-icon></button></a>
+    </p>
+  </footer>
+
+</html>
