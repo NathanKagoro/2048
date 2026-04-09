@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Links to bootstrap and local stylesheets-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../shared/2048 stylesheet.css">
+    <link rel="stylesheet" href="2048 leaderboard.css">
+
+    <title>2048 Leaderboard</title>
+</head>
+
+<body class="container">
+    <div id="shared-header"></div>
+
+  <!--Leaderboard heading-->
+    <h1 id="leaderboard-header">Leaderboard</h1>
+
+    <main>
+        <!--Leaderboard table -->
+        <div id="leaderboard">
+          <table>
+            <tr>
+              <td class="number" >1</td>
+              <td class="name" id ="first_name" >Lee</td>
+              <td class="points" id="first_points"> 32</td>
+            </tr>
+            <tr>
+              <td class="number">2</td>
+              <td class="name" id="second_name">Mark</td>
+              <td class="points" id="second_points">16</td>
+            </tr>
+            <tr>
+              <td class="number">3</td>
+              <td class="name" id="third_name">Derick</td>
+              <td class="points" id="third_points">8</td>
+            </tr>
+            <tr>
+              <td class="number">4</td>
+              <td class="name" id="fourth_name">Quan</td>
+              <td class="points" id="fourth_points">4</td>
+            </tr>
+            <tr>
+              <td class="number">5</td>
+              <td class="name" id="fifth_name">Johnny</td>
+              <td class="points" id="fifth_points">2</td>
+            </tr>
+          </table>
+        </div>
+      </main>
+
+      <script src="2048 leaderboard.js" defer></script>
+
+    <div id="shared-footer"></div>
+
+    <script>
+        window.sharedLayoutOptions = {
+            backLink: '../entry/2048 entry.html',
+            showSettings: true,
+            showUserBanner: false,
+            actionButton: {
+                actionName: 'gamePlay',
+                icon: 'chevron-forward',
+                text: 'Game play',
+                id: 'game-play-button'
+            },
+            accountLink: '../login/2048 login.html',
+            difficultyLink: '../difficulty/2048 difficulty.html'
+        };
+    </script>
+    <script src="../shared/shared-layout.js" defer></script>
+</body>
+
+</html>

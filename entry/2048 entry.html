@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Links to local stylesheets-->
+    <link rel="stylesheet" href="entry stylesheet.css">
+    <link rel="stylesheet" href="../shared/2048 stylesheet.css">
+    <title>2048</title>
+</head>
+
+<body class="container">
+    <div id="shared-header"></div>
+
+    <!--Buttons that link login page and difficulty selection page-->
+    <a href="../login/2048 login.html"><button id="login_button">   Login </button></a>
+    <a href="../difficulty/2048 difficulty.html"><button id="guest_button" onclick="guest()">Play as guest</button></a>
+
+    <script>
+        function guest(){
+            sessionStorage.loggedInUser = "Guest";
+            window.location.href = "../difficulty/2048 difficulty.html";
+        }
+    </script>
+
+    <div id="shared-footer"></div>
+
+    <script>
+        window.sharedLayoutOptions = {
+            backLink: '../entry/2048 entry.html',
+            showSettings: false,
+            showUserBanner: false
+        };
+    </script>
+    <script src="../shared/shared-layout.js" defer></script>
+</body>
+
+</html>

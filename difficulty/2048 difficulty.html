@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Links to bootstrap and local stylesheets-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="2048 difficulty.css">
+    <link rel="stylesheet" href="../shared/2048 stylesheet.css">
+    <title>2048</title>
+</head>
+
+<body class="container">
+    <script>
+        function easy_load(){
+            sessionStorage.gamemode = "easy";
+            window.location.href = '../game/2048 game.html'
+        }
+
+        function medium_load(){
+            sessionStorage.gamemode = "medium";
+            window.location.href = '../game/2048 game.html'
+        }
+
+        function hard_load(){
+            sessionStorage.gamemode = "hard";
+            window.location.href = '../game/2048 game.html'
+        }
+    </script>
+
+    <div id="shared-header"></div>
+
+    <br><br><br>
+
+    <!--Buttons allowing users to select game difficulty-->
+    <button id="easy_button" onclick="easy_load()" class="choice_button"> Easy </button>
+    <button id="medium_button" onclick="medium_load()" class="choice_button"> Challenging </button>
+    <button id="hard_button" onclick="hard_load()" class="choice_button">Extreme</button>
+
+    <div id="shared-footer"></div>
+
+    <script>
+        window.sharedLayoutOptions = {
+            backLink: '../entry/2048 entry.html',
+            showSettings: false,
+            showUserBanner: false
+        };
+    </script>
+    <script src="../shared/shared-layout.js" defer></script>
+</body>
+
+</html>

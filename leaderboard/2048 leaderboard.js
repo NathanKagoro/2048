@@ -15,7 +15,7 @@ fourth_points = document.getElementById("fourth_points");
 fifth_name = document.getElementById("fifth_name");
 fifth_points = document.getElementById("fifth_points");
 
-
+// Initializes leaderboard with default values
 function intialize_leaderboard(){
     highscores.first_name = first_name.textContent;
     highscores.first_points = first_points.textContent;
@@ -36,6 +36,7 @@ function intialize_leaderboard(){
     localStorage.setItem("Highscores", highscores_json)
 }
 
+// Displays the current highscores on the leaderboard
 function display_leaderboard(){
     first_name.textContent = highscores.first_name;
     first_points.textContent = highscores.first_points;

@@ -26,6 +26,7 @@ let board_grid = [
     [0,0,0,0]
 ];
 
+// Displays the current board grid in console
 function display_board(){
     for(row=0; row<4; row++){
         console.log(board_grid[row]);
@@ -40,6 +41,7 @@ let board_div_system = ["0-0","0-1", "0-2", "0-3",
                         "3-0","3-1", "3-2", "3-3"]
 
 let score = 0;
+let maxTile = parseInt(sessionStorage.getItem("maxTile")) || 2;
 
 window.addEventListener("load", (event) =>{
 
@@ -74,7 +76,7 @@ window.addEventListener("keyup", (event) =>{
     }
 });
 
-
+// Adds a new tile with given number at random empty spot
 function generatenum(num){
 
     randrow = Math.floor(Math.random() * 4);
@@ -83,6 +85,10 @@ function generatenum(num){
     if(isplayable){
         if(isfree(randrow, randcol)){
             board_grid[randrow][randcol] = num;
+            if(num > maxTile) {
+                maxTile = num;
+                sessionStorage.setItem("maxTile", maxTile);
+            }
         }
         else{
             generatenum(num);
@@ -93,6 +99,7 @@ function generatenum(num){
     }
 }
 
+// Generates tiles for medium difficulty with increasing challenge
 function generatenum_medium(num){
     difficulty = 0;
     randnum = Math.random();
@@ -141,6 +148,7 @@ function generatenum_hard(num){
     }
 }
 
+// Gets the index of the tile div for given row and column
 function getgametile(row, column){
     let row_string = row.toString();
     let col_String = column.toString();
@@ -150,6 +158,7 @@ function getgametile(row, column){
     return game_tile_priv;
 }
 
+// Updates the tile div with the number and styling
 function to_add(num, game_tile){
     class_add = 'x' + num.toString();
     let board_tile =  board_divs[game_tile];
@@ -174,6 +183,7 @@ function isfreerow(row,column){
     return open;
 }
 
+// Checks if there are any empty spaces on the board
 function isopen(){
     open = false;
 
@@ -317,6 +327,7 @@ function update_highscores(num){
     else{null}
 }
 
+// Ends the game and updates highscores
 function endgame(){
     if(username != "Guest"){update_highscores(score);}
     board.innerHTML = "<span style= 'text-align:center;  background-color:white; color:red; font-size: 67px; font-family: 'Times New Roman', Times, serif;font-weight: bold;'><br>GAME OVER</span>";
@@ -348,6 +359,7 @@ function isplayable(){
     return open
 }
 
+// Updates the displayed score based on board values
 function update_score(){
     sum = -4;
     for(row=0; row<4; row++){
@@ -586,7 +598,12 @@ function merge_nums_left(grid1){
         num = 0;
         while(num < to_be_summed.length){
             if(to_be_summed[num] == to_be_summed[num+1]){
-                to_be_moved.push(to_be_summed[num]*2);
+                let newVal = to_be_summed[num]*2;
+                to_be_moved.push(newVal);
+                if(newVal > maxTile) {
+                    maxTile = newVal;
+                    sessionStorage.setItem("maxTile", maxTile);
+                }
                 to_be_summed[num+1] = 0;
                 num += 1;
             }
@@ -611,7 +628,12 @@ function merge_nums_right(grid1){
         num = 0;
         while(num < to_be_summed.length){
             if(to_be_summed[num] == to_be_summed[num+1]){
-                to_be_moved.push(to_be_summed[num]*2);
+                let newVal = to_be_summed[num]*2;
+                to_be_moved.push(newVal);
+                if(newVal > maxTile) {
+                    maxTile = newVal;
+                    sessionStorage.setItem("maxTile", maxTile);
+                }
                 to_be_summed[num+1] = 0;
                 num += 1;
             }

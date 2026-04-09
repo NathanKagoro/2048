@@ -16,41 +16,6 @@
     font-weight: bold;
 }
 
-#leaderboard{
-  border: none;
-  background: none;
-  float: 64px;
-  transition-duration: 0.4s;
-}
-
-#settings{
-  border: none;
-  background: none;
-  transition-duration: 0.4s;
-}
-
-/*Hover effects for header buttons*/
-#leaderboard:hover{
-    box-shadow: 0px 0px 5px #fff;
-}
-
-#settings:hover{
-    box-shadow: 0px 0px 5px #fff;
-}
-
-/*Code allowing side bar to collapse*/
-.closed{
-    display: none;
-}
-
-.open{
-    display: initial;
-}
-
-.button-text{
-    font-weight: bold;
-}
-
 #scores{
     display: inline;
 }

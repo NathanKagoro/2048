@@ -1,0 +1,16 @@
+#login_button {
+	width: 30%;
+	height: 200px;
+	font-size: 50px;
+	position: relative;
+    left: 150px;
+}
+
+#guest_button {
+	width: 30%;
+	height: 200px;
+	font-size: 50px;
+	position: relative;
+    left: 450px;
+}
+

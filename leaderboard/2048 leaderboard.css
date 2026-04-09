@@ -2,46 +2,10 @@ body{
     align-items: center;
 }
 
-#leaderboard-icon{
-    border: none;
-    background: none;
-    float: 64px;
-    transition-duration: 0.4s;
-  }
-  
-#settings-icon{
-    border: none;
-    background: none;
-    transition-duration: 0.4s;
-  
-  }
-
-/*Hover effects for header buttons*/  
-  #leaderboard:hover{
-      box-shadow: 0px 0px 5px #fff;
-  }
-  
-  #settings:hover{
-      box-shadow: 0px 0px 5px #fff;
-  }
-
-/*Code allowing side bar to collapse*/
-.closed{
-    display: none;
-}
-
-.open{
-    display: initial;
-}
-
-.sidebar{
-    right: 0;
-}
-
 main {
     width: 40rem;
     height: 425px;
-    background-color: #cdc1b5;
+    background-color: rgba(205, 193, 181, 0.9);
     -webkit-box-shadow: 0px 5px 15px 8px #e4e7fb;
     box-shadow: 0px 5px 15px 8px #e4e7fb;
     display: flex;

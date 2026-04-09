@@ -1,0 +1,218 @@
+#heading{
+    font-size: 120px;
+    background: none;
+    color: #654321;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.3s;
+    border: none;
+}
+
+#heading:hover {
+    background-color: #f4b17a;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+h1{
+	text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+header{
+  background: none;
+  height: 75px;
+  width: 100%;
+  text-align: right;
+  align-items: right;
+  display: inline-block;
+}
+
+/*Colour changing background*/
+.container{
+	height: 100dvh;
+	width: 100%;
+	background: linear-gradient(45deg, #eCE0CA,#f4b17a, #f65);
+	background-size: 300% 300%;
+	animation: color 12s ease-in-out infinite;
+}
+@keyframes color{
+	0%{background-position: 0 50%;}
+
+	50%{background-position: 100% 50%;}
+
+	100%{background-position: 0 50%;}
+}
+
+/*Styling for footer and footer buttons*/
+footer{
+  color: white;
+  text-align: center;
+}
+
+.footer-text{
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+}
+
+ion-icon{
+  font-size: 64px;
+}
+
+.instagram-btn{
+  border: none;
+  background: none;
+  display: inline-flex;
+  align-items: center;
+  transition-duration: 0.4s;
+}
+
+.email-btn{
+  border: none;
+  background: none;
+  display: inline-flex;
+  align-items: center;
+  transition-duration: 0.4s;
+}
+
+.linkedin-btn{
+  border: none;
+  background: none;
+  display: inline-flex;
+  align-items: center;
+  transition-duration: 0.4s;
+}
+
+/*Hover effects for footer*/ 
+.instagram-btn:hover{
+  transform: rotate(-45deg)
+}
+
+.email-btn:hover{
+  transform: rotate(-45deg)
+}
+
+.linkedin-btn:hover{
+  transform: rotate(-45deg)
+}
+
+#login_button,
+#guest_button,
+.choice_button {
+  transition-duration: 0.4s;
+  position: relative;
+  border-width: medium;
+  border-radius: 10px;
+  background-color: #7c4700;
+}
+
+button#leaderboard,
+#leaderboard-icon,
+#settings,
+#settings-icon {
+  border: none;
+  background: none;
+  transition-duration: 0.4s;
+}
+
+#login_button:hover,
+#guest_button:hover,
+.choice_button:hover,
+button#leaderboard:hover,
+#leaderboard-icon:hover,
+#settings:hover,
+#settings-icon:hover {
+  background-color: #f4b17a;
+  color: white;
+  box-shadow: 0px 0px 5px #fff;
+}
+
+#login_button:active,
+#guest_button:active,
+.choice_button:active {
+  background-color: #f57c5f;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+button#leaderboard,
+#leaderboard-icon {
+  float: 64px;
+}
+
+.closed {
+  display: none;
+}
+
+.open {
+  display: initial;
+}
+
+.sidebar {
+  right: 0;
+}
+
+.button-text {
+  font-weight: bold;
+}
+
+#gender-select{
+  text-size-adjust: 10px;
+}
+.form-control{
+  text-size-adjust: 10px;
+}
+
+.shared-header-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+#username_header {
+    font-size: 36px;
+    font-weight: bold;
+    color: #654321;
+    transition: all 0.3s;
+    margin: 0;
+}
+
+#username_header:hover {
+    background-color: #e6a76a;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.header-button {
+    background-color: #f4b17a;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+}
+
+.header-button:hover {
+    background-color: #e6a76a;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}

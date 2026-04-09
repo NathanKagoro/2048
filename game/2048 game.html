@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Links to bootstrap and local stylesheets-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="2048 game stylesheet.css">
+    <link rel="stylesheet" href="../shared/2048 stylesheet.css">
+
+    <title>2048</title>
+</head>
+
+<body class="container">
+    <div id="shared-header"></div>
+
+    <div id="scores">
+        <H2 class="score" id="score"> Score: </H2>
+        <H2 class="score" id="highscore"> Highscore:</H2>
+    </div>
+
+    <!--Game board divided in sections containing all possible numbers to be generated-->
+    <div id="board">
+
+        <script src="2048 game logic.js" defer></script>
+
+        <!--
+        <div class="tile x2">2</div>
+        <div class="tile x4">4</div>
+        <div class="tile x8">8</div>
+        <div class="tile x16">16</div>
+        <div class="tile x32">32</div>
+        <div class="tile x64">64</div>
+        <div class="tile x128">128</div>
+        <div class="tile x256">256</div>
+        <div class="tile x512">512</div>
+        <div class="tile x1024">1024</div>
+        <div class="tile x2048">2048</div>
+        <div class="tile x4096">4096</div>
+        <div class="tile x8192">8192</div>
+        <div class="tile x8192">16384</div>
+        <div class="tile x8192">32768</div>
+        <div class="tile x8192">65535</div>
+        -->
+    </div>
+    <div id="shared-footer"></div>
+
+    <script>
+        window.sharedLayoutOptions = {
+            backLink: '../entry/2048 entry.html',
+            showSettings: true,
+            showUserBanner: true,
+            actionButton: {
+                link: '../leaderboard/2048 leaderboard.html',
+                icon: 'trophy',
+                text: 'Leaderboard',
+                id: 'leaderboard-button'
+            },
+            accountLink: '../login/2048 login.html',
+            difficultyLink: '../difficulty/2048 difficulty.html'
+        };
+    </script>
+    <script src="../shared/shared-layout.js" defer></script>
+</body>
+
+</html>
