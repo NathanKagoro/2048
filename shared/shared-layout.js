@@ -65,6 +65,7 @@ function renderSharedHeader(options = {}) {
     const backLink = options.backLink || '../entry/2048 entry.html';
     const username = options.username || sessionStorage.loggedInUser || 'Guest';
     const actionButton = options.actionButton || null;
+    const homeButton = options.homeButton || null;
     const showUserBanner = options.showUserBanner !== false;
     const showSettings = Boolean(options.showSettings);
 
@@ -82,6 +83,10 @@ function renderSharedHeader(options = {}) {
                     <ion-icon name="${actionButton.icon}" item-right></ion-icon>
                     <p class="button-text"> ${actionButton.text} </p>
                 </button></a>`) : ''}
+                ${homeButton ? `<a href="${homeButton.link}"><button type="button" class="button header-button" id="${homeButton.id || 'home-button'}">
+                    <ion-icon name="${homeButton.icon || 'home'}" item-right></ion-icon>
+                    <p class="button-text"> ${homeButton.text || 'Home'} </p>
+                </button></a>` : ''}
                 ${showSettings ? `<button type="button" class="button header-button" id="settings" onclick="sidebar_check()">
                     <ion-icon name="cog" float-right></ion-icon>
                     <p class="button-text"> Settings </p>
@@ -122,9 +127,8 @@ function renderSharedFooter() {
     container.innerHTML = `
         <footer>
             <p class="footer-text"> Website developed by Nathan Kagoro. Find me on:
-                <a href="https://instagram.com/natethespookykangaroo?igshid=OGQ5ZDc2ODk2ZA=="><button class="instagram-btn"><ion-icon name="logo-instagram" size="small"></ion-icon> </button></a>&nbsp;
                 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button class="email-btn"><ion-icon name="logo-youtube" size="small"></ion-icon></button></a> &nbsp;
-                <a href="https://www.linkedin.com/in/nathan-kagoro-06ba31270/?originalSubdomain=mu"><button class="linkedin-btn"><ion-icon name="logo-linkedin" size="small"></ion-icon></button></a>
+                <a href="https://www.linkedin.com/in/nathan-kagoro/"><button class="linkedin-btn"><ion-icon name="logo-linkedin" size="small"></ion-icon></button></a>
             </p>
         </footer>
     `;

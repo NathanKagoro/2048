@@ -1,11 +1,12 @@
-username = sessionStorage.getItem("loggedInUser");
+username = sessionStorage.getItem("loggedInUser") || "Guest";
 highscores = JSON.parse(localStorage.getItem("Highscores"));
 console.log(highscores)
 console.log("open")
 
-username_header = document.getElementById("username_text");
 score_text = document.querySelector(".score");
-score_text.textContent = "Score: 0";
+if (score_text) {
+    score_text.textContent = "Score: 0";
+}
 
 let user_stored = JSON.parse(localStorage.getItem(username));
 
@@ -13,9 +14,11 @@ body = document.getElementsByTagName("body");
 let board = document.getElementById("board");
 
 if (username != "Guest"){
-    username_header.textContent = username;
     highscore_text = document.querySelector("#highscore");
-    highscore_text.textContent = "Highscore: " + user_stored.Highscore;
+    if (highscore_text) {
+        const initialHighscore = user_stored && typeof user_stored.Highscore === "number" ? user_stored.Highscore : 0;
+        highscore_text.textContent = "Highscore: " + initialHighscore;
+    }
 }
 
 
@@ -331,9 +334,30 @@ function update_highscores(num){
 function endgame(){
     if(username != "Guest"){update_highscores(score);}
     board.innerHTML = "<span style= 'text-align:center;  background-color:white; color:red; font-size: 67px; font-family: 'Times New Roman', Times, serif;font-weight: bold;'><br>GAME OVER</span>";
-    if(user_stored.Highscore < score){
+    
+    // Add Play Again button
+    const playAgainBtn = document.createElement('button');
+    playAgainBtn.textContent = 'Play Again';
+    playAgainBtn.style.display = 'block';
+    playAgainBtn.style.margin = '20px auto';
+    playAgainBtn.style.padding = '12px 24px';
+    playAgainBtn.style.fontSize = '18px';
+    playAgainBtn.style.cursor = 'pointer';
+    playAgainBtn.style.backgroundColor = '#4CAF50';
+    playAgainBtn.style.color = 'white';
+    playAgainBtn.style.border = 'none';
+    playAgainBtn.style.borderRadius = '6px';
+    playAgainBtn.addEventListener('click', () => {
+        // Reload the page to restart the game
+        window.location.reload();
+    });
+    board.appendChild(playAgainBtn);
+    
+    if(user_stored && user_stored.Highscore < score){
         user_stored.Highscore = score;
-        highscore_text.textContent = "Highscore: " + user_stored.Highscore;
+        if (highscore_text) {
+            highscore_text.textContent = "Highscore: " + user_stored.Highscore;
+        }
         let user_json = JSON.stringify(user_stored);
         localStorage.setItem(username, user_json);
     }
