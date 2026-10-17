@@ -252,10 +252,10 @@
       if (!kind) { msg.hidden = true; msg.innerHTML = ''; msg.className = 'g2048-msg'; return; }
       msg.className = 'g2048-msg ' + (kind === 'win' ? 'is-win' : 'is-over');
       msg.innerHTML = kind === 'win'
-        ? '<p>You win!</p><small>You made 2048.</small><div><button type="button" class="g2048-btn" data-keep>Keep going</button><button type="button" class="g2048-btn" data-retry>New game</button></div>'
+        ? '<p>You win</p><small>You made 2048.</small><div><button type="button" class="g2048-btn" data-keep>Keep going</button><button type="button" class="g2048-btn" data-retry>New game</button></div>'
         : `<p>Game over</p><small>Score ${game.score}</small><div><button type="button" class="g2048-btn" data-retry>Try again</button>${game.canUndo() ? '<button type="button" class="g2048-btn" data-msg-undo>Undo</button>' : ''}</div>`;
       msg.hidden = false;
-      statusEl.textContent = kind === 'win' ? 'You reached 2048!' : 'No moves left.';
+      statusEl.textContent = kind === 'win' ? 'You reached 2048.' : 'No moves left.';
     }
 
     function refreshMessage() {
